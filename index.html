@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>3D Model Viewer</title>
+    <meta charset="UTF-8" />
+    <title>3D Laptop Viewer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <style>
-      body { margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background: #fff; }
+      html, body {
+        margin: 0;
+        height: 100%;
+        background: transparent;
+        overflow: hidden;
+      }
+      model-viewer {
+        width: 100%;
+        height: 100%;
+      }
     </style>
   </head>
   <body>
     <model-viewer 
-      src="./laptop.glb"
+      src="laptop.glb"
       alt="3D laptop"
       auto-rotate
+      auto-rotate-delay="0"
       camera-controls
-      style="width: 100%; height: 100%;">
-    </model-viewer>
+      interaction-prompt="none"
+      exposure="1"
+      environment-image="neutral"
+      shadow-intensity="0.3"
+    ></model-viewer>
   </body>
 </html>
